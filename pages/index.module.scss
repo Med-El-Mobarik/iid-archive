@@ -1,0 +1,53 @@
+.container {
+  width: 100%;
+  height: 100vh;
+  background-color: #2c3e50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .form {
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .button {
+      background-color: #3498db;
+      font-size: 16px;
+      color: #fff;
+      border: 0;
+      margin-top: 35px;
+      width: 100%;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      border-radius: 20px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #3498dbb1;
+      }
+    }
+  }
+
+  .logo {
+    width: 160px;
+  }
+
+  .textField {
+    label {
+      color: #bfbfbf;
+    }
+    input {
+      color: #bfbfbf;
+      // color: #dcdcdc;
+
+    }
+  }
+
+  .error{
+    color: tomato;
+    font-size: 12px;
+    align-self: flex-start;
+  }
+}

@@ -1,0 +1,31 @@
+.add {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 50%;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.field {
+  width: 300px;
+  margin-bottom: 20px;
+}
+
+.btn {
+  background-color: #3498db;
+  font-size: 16px;
+  color: #fff;
+  border: 0;
+  margin-top: 20px;
+  width: 300px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  border-radius: 20px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #3498dbb1;
+  }
+}

@@ -1,0 +1,17 @@
+.content {
+  // display: flex;
+  // flex-direction: column;
+  // align-items: center;
+  margin: 40px auto 0 auto;
+  width: fit-content;
+
+  .row {
+    align-self: flex-start;
+  }
+}
+
+// @media (max-width: 900px) {
+//   .container {
+//     width: auto;
+//   }
+// }
