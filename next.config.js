@@ -4,6 +4,7 @@ module.exports = {
   env: {
     username: "med",
     password: "4QqUx973Wpxe4QLg",
-    url: "http://localhost:3000"
+    url: "https://iid-archive.vercel.app/",
+    NEXTAUTH_URL: "https://iid-archive.vercel.app/",
   },
 };
