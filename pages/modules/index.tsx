@@ -7,10 +7,10 @@ import { GetServerSideProps } from "next";
 import { getSession } from "next-auth/client";
 import { Session } from "next-auth";
 
-import axios, { AxiosError } from "axios";
+import axios from "axios";
 
 interface Props {
-  session: Session;
+  session: any;
   response: [
     {
       semester1: string[];
@@ -20,10 +20,14 @@ interface Props {
   ];
 }
 
+const years = ["first_year", "second_year", "third_year"];
+
 const Cours = (props: Props) => {
   const { session, response } = props;
 
-  const [year, setYear] = useState("first_year");
+  const [year, setYear] = useState(
+    years.includes(session?.user?.year) ? session?.user?.year : "first_year"
+  );
 
   return (
     <Fragment>

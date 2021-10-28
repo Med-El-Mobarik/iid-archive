@@ -3,12 +3,13 @@
   // height: 45vh;
   height: fit-content;
   padding-bottom: 50px;
-  background: linear-gradient(
-      to right,
-      rgba(43, 61, 79, 0.9),
-      rgba(43, 61, 79, 0.9)
-    ),
-    url("/img/background.jpeg");
+  // background: linear-gradient(
+  //     to right,
+  //     rgba(43, 61, 79, 0.9),
+  //     rgba(43, 61, 79, 0.9)
+  //   ),
+  //   url("/img/background.jpeg");
+  background: url("/img/background.jpeg");
   background-size: cover;
   background-attachment: fixed;
   background-position: center;

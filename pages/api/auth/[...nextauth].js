@@ -42,7 +42,7 @@ export default NextAuth({
         }
 
         client.close();
-        return { admin: user.admin, name: user.name };
+        return { admin: user.admin, name: user.name, year: user.year };
       },
     }),
   ],

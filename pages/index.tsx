@@ -8,7 +8,9 @@ import "animate.css";
 
 import { signIn, SignInResponse } from "next-auth/client";
 
-// import axios, { AxiosResponse } from "axios";
+import { GetServerSideProps } from "next";
+import { getSession } from "next-auth/client";
+import { Session } from "next-auth";
 
 import TextField from "@mui/material/TextField";
 import PersonRoundedIcon from "@mui/icons-material/PersonRounded";
@@ -102,6 +104,21 @@ const Home: NextPage = () => {
       </form>
     </div>
   );
+};
+
+export const getServerSideProps: GetServerSideProps = async (context) => {
+  const session: Session | null = await getSession({ req: context.req });
+
+  if (session) {
+    return {
+      redirect: {
+        destination: "/modules",
+        permanent: false,
+      },
+    };
+  } else {
+    return { props: {} };
+  }
 };
 
 export default Home;

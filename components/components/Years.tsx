@@ -4,8 +4,8 @@ import classes from "./Years.module.scss";
 import ArrowForwardIosIcon from "@mui/icons-material/KeyboardArrowDown";
 
 interface Props {
-  setYear: Dispatch<SetStateAction<string>>;
-  year: string;
+  setYear: Dispatch<SetStateAction<string | null | undefined>>;
+  year: string | null | undefined;
 }
 
 const Years = (props: Props) => {

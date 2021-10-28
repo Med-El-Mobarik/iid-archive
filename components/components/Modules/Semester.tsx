@@ -8,7 +8,7 @@ interface Props {
     readonly [key: string]: string;
   };
   name: string;
-  year: string;
+  year: string | null | undefined;
   semester: string;
 }
 

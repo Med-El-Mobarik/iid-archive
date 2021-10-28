@@ -9,7 +9,7 @@ interface Module {
 }
 
 interface Props {
-  year: string;
+  year: string | null | undefined;
   response: Module[];
 }
 
