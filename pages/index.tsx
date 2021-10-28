@@ -70,6 +70,7 @@ const Home: NextPage = () => {
           >
             <PersonRoundedIcon sx={{ color: "#3498db", mr: 1, my: 0.5 }} />
             <TextField
+              autoComplete="off"
               fullWidth
               {...register("cne", { required: true })}
               className={classes.textField}
