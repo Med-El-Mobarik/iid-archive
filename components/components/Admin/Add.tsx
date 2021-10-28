@@ -17,8 +17,7 @@ import { ref, uploadBytes } from "firebase/storage";
 const Index = () => {
   const [type, setType] = useState("cours");
   const [selectedFiles, setSelectedFiles] = useState<any[]>([]);
-  //   const [currentFile, setCurrentFile] = useState("");
-  //   const [percent, setPercent] = useState(0);
+  const [text1, setText1] = useState<string>("");
 
   const handleChange = (event: SelectChangeEvent) => {
     setType(event.target.value as string);
@@ -30,19 +29,19 @@ const Index = () => {
 
   const onSubmit = async (e: any) => {
     e.preventDefault();
+
     try {
       const module = document.getElementById("module-name") as HTMLInputElement;
 
-      //   console.log(selectedFiles);
-
       Array.from(selectedFiles).map((file) => {
+        setText1(`Wait for ${file.name} ...`);
         const fileRef = ref(storage, `${module.value}/${type}/${file.name}`);
 
         const uploadTask = uploadBytes(fileRef, file);
 
         uploadTask
           .then(() => {
-            console.log(`${file.name} uploaded!`);
+            setText1(`${file.name} uploaded!`);
           })
           .catch((error) => {
             console.log(error);
@@ -60,13 +59,14 @@ const Index = () => {
   return (
     <form className={classes.add} onSubmit={onSubmit}>
       <TextField
+        style={{ marginBottom: "20px" }}
         className={classes.field}
         id="module-name"
         label="Module"
         variant="outlined"
         required
       />
-      <FormControl className={classes.field}>
+      <FormControl style={{ marginBottom: "20px" }} className={classes.field}>
         <InputLabel id="demo-simple-select-label">Type</InputLabel>
         <Select
           labelId="demo-simple-select-label"
@@ -78,7 +78,7 @@ const Index = () => {
         >
           <MenuItem value="cours">cours</MenuItem>
           <MenuItem value="tds">tds</MenuItem>
-          <MenuItem value="exam">exam</MenuItem>
+          <MenuItem value="exams">exams</MenuItem>
         </Select>
       </FormControl>
       <Button
@@ -100,11 +100,9 @@ const Index = () => {
         />
       </Button>
       <button className={classes.btn}>Submit</button>
-      {/* {currentFile && ( */}
-      {/* <div style={{ marginTop: "20px" }}>
-        {currentFile}: {percent}%
-      </div> */}
-      {/* )} */}
+      <div id="wait-file" style={{ marginTop: "20px" }}>
+        {text1}
+      </div>
     </form>
   );
 };

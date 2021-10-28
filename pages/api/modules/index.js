@@ -1,7 +1,7 @@
 import { getSession } from "next-auth/client";
 import { connectToDatabase } from "../../../lib/db";
-import { storage } from "../../../lib/firebase";
-import { listAll, ref } from "firebase/storage";
+// import { storage } from "../../../lib/firebase";
+// import { listAll, ref } from "firebase/storage";
 
 export default async function handler(req, res) {
   if (req.method === "GET") {
@@ -12,21 +12,14 @@ export default async function handler(req, res) {
       return;
     }
 
-    const listRef = ref(storage, "/");
-    listAll(listRef)
-      .then((res) => {
-        // res.prefixes.forEach((folderRef) => {
-        //   // All the prefixes under listRef.
-        //   // You may call listAll() recursively on them.
-        // });
-        // res.items.forEach((itemRef) => {
-        //   // All the items under listRef.
-        // });
-        console.log(res);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+    // const listRef = ref(storage, "/");
+    // listAll(listRef)
+    //   .then((res) => {
+    //     console.log(res);
+    //   })
+    //   .catch((error) => {
+    //     console.log(error);
+    //   });
 
     const client = await connectToDatabase();
     const yearsCollection = client.db().collection("years");

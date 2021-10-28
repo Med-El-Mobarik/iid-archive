@@ -36,8 +36,8 @@ const Module = (props: Props) => {
 };
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
-  const years = ["first_year", "second_year", "third_year"];
-  const semesters = ["semester_one", "semester_two"];
+  // const years = ["first_year", "second_year", "third_year"];
+  // const semesters = ["semester_one", "semester_two"];
   const params: any = context.query;
   const session: Session | null = await getSession({ req: context.req });
 
@@ -62,7 +62,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   const getStructure = async () => {
     try {
       const res = await axios.get(
-        `http://localhost:3000/api/structure/${params.name}`,
+        `${process.env.url}/api/structure/${params.name}`,
         {
           withCredentials: true,
           headers: {

@@ -1,12 +1,12 @@
 import { useState } from "react";
 import type { NextPage } from "next";
-import Link from "next/link";
+// import Link from "next/link";
 import { useRouter } from "next/router";
 import { useForm } from "react-hook-form";
 import classes from "./index.module.scss";
 import "animate.css";
 
-import { signIn, SignInResponse, useSession } from "next-auth/client";
+import { signIn, SignInResponse } from "next-auth/client";
 
 // import axios, { AxiosResponse } from "axios";
 
