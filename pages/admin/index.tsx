@@ -4,9 +4,21 @@ import { GetServerSideProps } from "next";
 
 import { getSession } from "next-auth/client";
 
+import axios from "axios";
 
-const index = () => {
-  return <Add />;
+interface Props {
+  response: [
+    {
+      semester1: string[];
+      semester2: string[];
+      year: string;
+    }
+  ];
+}
+
+const index = (props: Props) => {
+  const {response} = props;
+  return <Add response={response}/>;
 };
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
@@ -21,8 +33,29 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
     };
   }
 
+  const getModules = async () => {
+    try {
+      const res = await axios.get(`${process.env.url}/api/modules`, {
+        withCredentials: true,
+        headers: {
+          Cookie: context.req.headers.cookie!,
+        },
+      });
+      return res.data;
+    } catch (error: any) {
+      if (error.response) {
+        // console.log("s3");
+        console.log(error.response.data);
+      }
+      console.log("s2");
+      console.log(error.message);
+      return null;
+    }
+  };
+  const response = await getModules();
+
   return {
-    props: { session },
+    props: { response },
   };
 };
 
