@@ -150,8 +150,8 @@ const Index = (props: Props) => {
             onChange={handleFileChange}
             required
           >
-            {files.map((e) => (
-              <MenuItem value={e.name}>{e.name}</MenuItem>
+            {files.map((e, id) => (
+              <MenuItem key={id} value={e.name}>{e.name}</MenuItem>
             ))}
           </Select>
         </FormControl>
