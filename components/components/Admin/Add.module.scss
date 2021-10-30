@@ -10,7 +10,7 @@
 
 .field {
   width: 300px;
-//   margin-bottom: 20px;
+  //   margin-bottom: 20px;
 }
 
 .btn {
@@ -27,5 +27,9 @@
 
   &:hover {
     background-color: #3498dbb1;
+  }
+
+  &.delete {
+    background-color: #e74c3c;
   }
 }

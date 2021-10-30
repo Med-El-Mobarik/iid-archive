@@ -52,22 +52,6 @@ export default async function handler(req, res) {
         .status(500)
         .send({ message: "Error from firebase tree structure!" });
     }
-
-    // const client = await connectToDatabase();
-    // const modulesCollection = client.db().collection("modules");
-
-    // const structure = await modulesCollection.findOne(
-    //   { name: module },
-    //   { projection: { _id: 0, name: 0 } }
-    // );
-    // if (!structure) {
-    //   client.close();
-    //   return res.status(404).send("Module Not Found!");
-    // }
-
-    // res.status(200).json(structure);
-
-    // client.close();
   } else {
     return null;
   }
