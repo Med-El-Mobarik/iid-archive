@@ -107,19 +107,19 @@ const Home: NextPage = () => {
   );
 };
 
-export const getServerSideProps: GetServerSideProps = async (context) => {
-  const session: Session | null = await getSession({ req: context.req });
+// export const getServerSideProps: GetServerSideProps = async (context) => {
+//   const session: Session | null = await getSession({ req: context.req });
 
-  if (session) {
-    return {
-      redirect: {
-        destination: "/modules",
-        permanent: false,
-      },
-    };
-  } else {
-    return { props: {} };
-  }
-};
+//   if (session) {
+//     return {
+//       redirect: {
+//         destination: "/modules",
+//         permanent: false,
+//       },
+//     };
+//   } else {
+//     return { props: {} };
+//   }
+// };
 
 export default Home;
