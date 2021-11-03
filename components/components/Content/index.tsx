@@ -14,7 +14,7 @@ const index = (props: Props) => {
   const rows = [
     { name: "Cours", files: cours, type:"cours" },
     { name: "Tds/Tps", files: tds, type:"tds" },
-    { name: "Exams", files: exams, type:"exams" },
+    { name: "Exams/Projects", files: exams, type:"exams" },
   ];
 
   return (
