@@ -21,7 +21,7 @@ const Header = (props: Props) => {
 
   const logOutHandler = async () => {
     await signOut();
-    router.push("/");
+    // router.push("/");
   };
 
   return (
