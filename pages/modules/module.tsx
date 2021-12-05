@@ -19,18 +19,19 @@ interface Props {
     cours: string[];
     tds: string[];
     exams: string[];
+    projects: string[];
   };
 }
 
 const Module = (props: Props) => {
   const { session, params, response } = props;
-  const { cours, tds, exams } = response;
+  const { cours, tds, exams, projects } = response;
 
   // console.log(response);
   return (
     <>
       <Header name={session?.user?.name} />
-      <Content module={params.name} cours={cours} tds={tds} exams={exams} />
+      <Content module={params.name} cours={cours} tds={tds} exams={exams} projects={projects}/>
     </>
   );
 };

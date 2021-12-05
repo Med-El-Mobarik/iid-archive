@@ -131,6 +131,7 @@ const Index = (props: Props) => {
             <MenuItem value="cours">cours</MenuItem>
             <MenuItem value="tds">tds</MenuItem>
             <MenuItem value="exams">exams</MenuItem>
+            <MenuItem value="projects">projects</MenuItem>
           </Select>
         </FormControl>
       )}

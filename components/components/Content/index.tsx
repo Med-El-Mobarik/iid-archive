@@ -5,16 +5,18 @@ interface Props {
   cours: string[];
   tds: string[];
   exams: string[];
+  projects: string[];
   module: string;
 }
 
 const index = (props: Props) => {
-  const { cours, tds, exams, module } = props;
+  const { cours, tds, exams, projects, module } = props;
 
   const rows = [
     { name: "Cours", files: cours, type:"cours" },
     { name: "Tds/Tps", files: tds, type:"tds" },
-    { name: "Exams/Projects", files: exams, type:"exams" },
+    { name: "Exams", files: exams, type:"exams" },
+    { name: "Projects", files: projects, type:"project" },
   ];
 
   return (

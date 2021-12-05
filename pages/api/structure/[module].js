@@ -24,6 +24,7 @@ export default async function handler(req, res) {
     let cours = [];
     let tds = [];
     let exams = [];
+    let projects = [];
 
     try {
       const listRefCours = ref(storage, `${req.query.module}/cours`);
@@ -44,8 +45,14 @@ export default async function handler(req, res) {
         exams.push(itemRef.name);
       });
 
+      const listRefProjects = ref(storage, `${req.query.module}/projects`);
+      const res4 = await listAll(listRefProjects);
+      res4.items.forEach(async (itemRef) => {
+        projects.push(itemRef.name);
+      });
+
       // console.log({ cours, tds, exams });
-      res.status(200).json({ cours, tds, exams });
+      res.status(200).json({ cours, tds, exams, projects });
     } catch (error) {
       console.log(error);
       return res
