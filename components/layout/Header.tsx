@@ -29,7 +29,7 @@ const Header = (props: Props) => {
       <nav>
         <div className={classes.nav}>
           <img src="/img/logo.png" />
-          {/* <div style={{ display: "flex", alignItems: "center" }}> */}
+          {/* <div style={{ display: "flex", alignIt> */}
           <div
             style={{
               display: "flex",
