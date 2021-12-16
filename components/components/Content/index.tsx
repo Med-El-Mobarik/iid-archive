@@ -16,7 +16,7 @@ const index = (props: Props) => {
     { name: "Cours", files: cours, type:"cours" },
     { name: "Tds/Tps", files: tds, type:"tds" },
     { name: "Exams", files: exams, type:"exams" },
-    { name: "Projects", files: projects, type:"project" },
+    { name: "Projects", files: projects, type:"projects" },
   ];
 
   return (
