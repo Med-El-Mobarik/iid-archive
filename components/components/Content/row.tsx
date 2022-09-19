@@ -1,4 +1,4 @@
-import PictureAsPdfOutlinedIcon from "@mui/icons-material/PictureAsPdfOutlined";
+import PictureAsPdfOutlinedIcon from '@mui/icons-material/FileDownload';
 import { storage } from "../../../lib/firebase";
 import { ref, getDownloadURL } from "firebase/storage";
 // import axios, { AxiosResponse } from "axios";
